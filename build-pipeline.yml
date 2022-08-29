@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Hello world when it's Monday"
-        run: echo "Hello $FIRST_NAME $MIDDLE_NAME $LAST_NAME, today is Monday and your password is $PASSWORD!"
+        run: echo "Hello $FIRST_NAME $MIDDLE_NAME $LAST_NAME, today is Monday and your password is ${{secrets.PASSWORD}}!"
         env:
           FIRST_NAME: Mona
           MIDDLE_NAME: The
