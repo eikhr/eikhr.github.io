@@ -3,6 +3,7 @@
 import '../styles/global.css';
 import { Github, Linkedin } from "@lucide/astro";
 import Link from '../components/Link.astro';
+import { FancyNodes } from '../components/FancyNodes';
 
 ---
 
@@ -14,12 +15,15 @@ import Link from '../components/Link.astro';
 		<title>Eik Hvattum Røgeberg | Portfolio</title>
 	</head>
 	<body class="font-sans flex flex-col items-center justify-center min-h-screen bg-[#f9f9f9] m-0">
+		<div class="absolute top-0 left-0 w-full h-full pointer-events-none z-[-1]">
+			<FancyNodes client:load />
+		</div>
 		<main class="bg-white p-8 md:p-12 rounded-2xl shadow-lg text-center">
 			<p>Hi! I'm</p>
 			<h1 class="mb-2 text-3xl font-bold">Eik Hvattum Røgeberg</h1>
 			<p class="mb-6 text-gray-500">Welcome to my portfolio page!</p>
 			<nav class="flex gap-6 justify-center">
-				<Link 
+				<Link
 					href="https://github.com/eikhr" 
 					colorClass="text-[#24292f]"
 					label="GitHub"
