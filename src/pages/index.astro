@@ -1,5 +1,9 @@
 ---
 
+import '../styles/global.css';
+import { Github, Linkedin } from "@lucide/astro";
+import Link from '../components/Link.astro';
+
 ---
 
 <html lang="en">
@@ -7,10 +11,29 @@
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Eik Hvattum Røgeberg | Portfolio</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="font-sans flex flex-col items-center justify-center min-h-screen bg-[#f9f9f9] m-0">
+		<main class="bg-white p-8 md:p-12 rounded-2xl shadow-lg text-center">
+			<p>Hi! I'm</p>
+			<h1 class="mb-2 text-3xl font-bold">Eik Hvattum Røgeberg</h1>
+			<p class="mb-6 text-gray-500">Welcome to my portfolio page!</p>
+			<nav class="flex gap-6 justify-center">
+				<Link 
+					href="https://github.com/eikhr" 
+					colorClass="text-[#24292f]"
+					label="GitHub"
+				>
+					<Github slot="icon" />
+				</Link>
+				<Link 
+					href="https://www.linkedin.com/in/eik-hvattum-rogeberg/" 
+					colorClass="text-[#0077b5]"
+					label="LinkedIn"
+				>
+					<Linkedin slot="icon" />
+				</Link>
+			</nav>
+		</main>
 	</body>
 </html>

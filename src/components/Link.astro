@@ -1,0 +1,17 @@
+---
+export interface Props {
+  href: string;
+  colorClass: string;
+  label: string;
+}
+const { href, colorClass, label } = Astro.props;
+---
+<a 
+  href={href}
+  target="_blank"
+  rel="noopener"
+  class={`flex flex-col items-center no-underline font-medium hover:underline ${colorClass}`}
+>
+  <slot name="icon" />
+  <span>{label}</span>
+</a> 
