@@ -1,0 +1,35 @@
+---
+// Spam protection: the address never appears in the HTML. It is stored
+// reversed and split, and only assembled into a mailto: link by JS when the
+// visitor hovers, focuses or clicks the link.
+export interface Props {
+  user: string;
+  domain: string;
+  colorClass: string;
+  label: string;
+}
+const { user, domain, colorClass, label } = Astro.props;
+const reverse = (s: string) => s.split('').reverse().join('');
+---
+<a
+  href="#"
+  data-u={reverse(user)}
+  data-d={reverse(domain)}
+  class={`email-link flex flex-col items-center no-underline font-medium hover:underline ${colorClass}`}
+>
+  <slot name="icon" />
+  <span>{label}</span>
+</a>
+
+<script>
+  const reverse = (s: string) => s.split('').reverse().join('');
+  document.querySelectorAll<HTMLAnchorElement>('a.email-link').forEach((a) => {
+    const reveal = () => {
+      if (a.href.startsWith('mailto:')) return;
+      a.href = 'mailto:' + reverse(a.dataset.u ?? '') + '@' + reverse(a.dataset.d ?? '');
+    };
+    ['mouseenter', 'focus', 'touchstart', 'click'].forEach((e) =>
+      a.addEventListener(e, reveal, { passive: true }),
+    );
+  });
+</script>

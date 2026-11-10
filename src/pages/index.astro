@@ -1,8 +1,9 @@
 ---
 
 import '../styles/global.css';
-import { Github, Linkedin } from "@lucide/astro";
+import { Github, Linkedin, Mail, Wheat } from "@lucide/astro";
 import Link from '../components/Link.astro';
+import EmailLink from '../components/EmailLink.astro';
 import { FancyNodes } from '../components/FancyNodes';
 
 ---
@@ -36,6 +37,21 @@ import { FancyNodes } from '../components/FancyNodes';
 					label="LinkedIn"
 				>
 					<Linkedin slot="icon" />
+				</Link>
+				<EmailLink
+					user="eik"
+					domain="eikhr.no"
+					colorClass="text-[#c2410c]"
+					label="Email"
+				>
+					<Mail slot="icon" />
+				</EmailLink>
+				<Link
+					href="/sourdough"
+					colorClass="text-[#a16207]"
+					label="Sourdough"
+				>
+					<Wheat slot="icon" />
 				</Link>
 			</nav>
 		</main>
