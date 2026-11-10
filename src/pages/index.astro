@@ -1,7 +1,7 @@
 ---
 
 import '../styles/global.css';
-import { Github, Linkedin, Mail, Wheat } from "@lucide/astro";
+import { Github, Linkedin, Mail } from "@lucide/astro";
 import Link from '../components/Link.astro';
 import EmailLink from '../components/EmailLink.astro';
 import AppTile from '../components/AppTile.astro';
@@ -50,14 +50,17 @@ import { FancyNodes } from '../components/FancyNodes';
 			</nav>
 			<hr class="my-8 border-gray-200" />
 			<section>
-				<h2 class="mb-5 text-sm font-semibold uppercase tracking-wider text-gray-400">Tools I've built</h2>
 				<div class="flex flex-wrap gap-4 justify-center">
 					<AppTile
 						href="/sourdough/"
 						name="Sourdough"
-						bgClass="bg-gradient-to-br from-amber-400 to-orange-600"
+						bgClass="bg-[#F6F1E7] ring-1 ring-inset ring-[#D8CBB5]"
 					>
-						<Wheat slot="icon" size={40} stroke-width={1.75} />
+						<!-- Same loaf mark as the header of the sourdough page -->
+						<svg slot="icon" class="w-14 h-9" viewBox="0 0 140 90" fill="none" aria-hidden="true">
+							<path d="M15 58C12 32 34 12 68 11C104 8 129 30 127 55C126 72 109 79 72 79C37 80 18 73 15 58Z" fill="#CB9148" stroke="#70441F" stroke-width="4" />
+							<path d="M42 28C34 37 32 46 35 53M66 22C55 33 53 45 57 57M91 24C80 33 77 45 80 57M111 34C103 40 99 47 100 53" stroke="#F8E5B9" stroke-width="8" stroke-linecap="round" />
+						</svg>
 					</AppTile>
 				</div>
 			</section>
