@@ -4,6 +4,7 @@ import '../styles/global.css';
 import { Github, Linkedin, Mail, Wheat } from "@lucide/astro";
 import Link from '../components/Link.astro';
 import EmailLink from '../components/EmailLink.astro';
+import AppTile from '../components/AppTile.astro';
 import { FancyNodes } from '../components/FancyNodes';
 
 ---
@@ -47,14 +48,19 @@ import { FancyNodes } from '../components/FancyNodes';
 					<Mail slot="icon" />
 				</EmailLink>
 			</nav>
-			<hr class="my-6 border-gray-200" />
-			<a
-				href="/sourdough"
-				class="inline-flex items-center gap-2 font-medium text-[#a16207] no-underline hover:underline"
-			>
-				<Wheat class="w-5 h-5" />
-				<span>Sourdough calculator</span>
-			</a>
+			<hr class="my-8 border-gray-200" />
+			<section>
+				<h2 class="mb-5 text-sm font-semibold uppercase tracking-wider text-gray-400">Tools I've built</h2>
+				<div class="flex flex-wrap gap-4 justify-center">
+					<AppTile
+						href="/sourdough/"
+						name="Sourdough"
+						bgClass="bg-gradient-to-br from-amber-400 to-orange-600"
+					>
+						<Wheat slot="icon" size={40} stroke-width={1.75} />
+					</AppTile>
+				</div>
+			</section>
 		</main>
 	</body>
 </html>

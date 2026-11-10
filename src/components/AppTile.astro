@@ -1,0 +1,18 @@
+---
+// A home-screen style app tile: large rounded icon with the name underneath.
+export interface Props {
+  href: string;
+  name: string;
+  /** Tailwind background classes for the icon square, e.g. a gradient. */
+  bgClass: string;
+}
+const { href, name, bgClass } = Astro.props;
+---
+<a href={href} class="group flex flex-col items-center gap-2 w-24 no-underline">
+  <span
+    class={`flex items-center justify-center w-20 h-20 rounded-[22px] text-white shadow-md transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:shadow-lg ${bgClass}`}
+  >
+    <slot name="icon" />
+  </span>
+  <span class="text-sm font-medium text-gray-700 leading-tight">{name}</span>
+</a>
